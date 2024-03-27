@@ -5,6 +5,14 @@
   margin: auto;
   align-items: center;
 }
+
+body {
+  height: 100vh;
+  background: url("https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+}
 .card {
   width: 32%;
   border: 5px solid black;
