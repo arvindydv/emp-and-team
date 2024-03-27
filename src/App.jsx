@@ -18,19 +18,19 @@ function App() {
     {
       id: 103,
       name: "Thor",
-      age: 20,
+      age: 25,
       active: true,
     },
     {
       id: 104,
       name: "Steve",
-      age: 20,
+      age: 80,
       active: true,
     },
     {
       id: 105,
       name: "Banner",
-      age: 20,
+      age: 38,
       active: true,
     },
   ]);
@@ -66,6 +66,11 @@ function App() {
     );
   };
 
+  const sortData = () => {
+    const sortedData = [...team].sort((a, b) => a.age - b.age);
+    setTeam(sortedData);
+  };
+
   useEffect(() => {
     const totalAge = team.reduce((sum, person) => sum + person.age, 0);
     const averageAge = totalAge / team.length;
@@ -99,6 +104,9 @@ function App() {
         {/*  */}
         <div className="card">
           <h3 className="title">Team</h3>
+          <button className="sort" onClick={sortData}>
+            sort by name
+          </button>
           {team.map((data, idx) => {
             return (
               <div className="employee-details" key={idx}>
